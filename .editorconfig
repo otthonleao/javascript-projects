@@ -1,0 +1,52 @@
+# raiz do repositório
+root = true
+
+# ---------------------------
+# Regras globais (todos os arquivos)
+# ---------------------------
+[*]
+charset = utf-8                 # sem BOM
+end_of_line = lf                # padrão Unix (bom p/ Linux/Mac e CI)
+insert_final_newline = true     # garante \n no fim do arquivo
+trim_trailing_whitespace = true # remove espaços ao final das linhas
+
+# ---------------------------
+# HTML, CSS, JS (e primos comuns no front)
+# ---------------------------
+[*.{html,htm,css,scss,js,mjs,cjs,ts,tsx,jsx,json}]
+indent_style = tab
+indent_size  = 2
+tab_width    = 2
+
+# JSON exige 2 espaços por convenção (reforço explícito)
+[*.json]
+indent_size = 2
+
+# ---------------------------
+# Arquivos minificados (não mexer em whitespace)
+# ---------------------------
+[*.min.{js,css}]
+insert_final_newline = false
+trim_trailing_whitespace = false
+
+# ---------------------------
+# Markdown: mantém dois espaços no fim da linha (quebra de linha)
+# ---------------------------
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 2
+
+# ---------------------------
+# Shell e batch (casos pontuais)
+# ---------------------------
+[*.sh]
+end_of_line = lf
+[*.bat]
+end_of_line = crlf
+
+# ---------------------------
+# Makefile (tabs obrigatórios)
+# ---------------------------
+[Makefile]
+indent_style = tab
+tab_width = 4

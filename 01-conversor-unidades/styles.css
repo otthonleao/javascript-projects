@@ -1,0 +1,98 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+body {
+	background-color: #f4f4f4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.container {
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 2 10px rgba(0, 0, 0, 0.2);
+	padding: 1.5rem;
+	width: 400px;
+}
+
+h1 {
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 1.5rem;
+	color: #333;
+}
+
+.input-group, .output-group {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1.2rem;
+}
+
+.input-group label, .output-group label {
+	padding: 0.4rem;
+	font-weight: bold;
+}
+/* Seletores: torne o select consistente e adicione uma seta custom */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+	appearance: none;
+	  /* seta custom (pequeno SVG inline) */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23666' d='M0 0h4L2 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  background-size: 0.65rem;
+}
+
+/* remover seta no IE */
+select::-ms-expand {
+  display: none;
+}
+
+select, input {
+	padding: 0.8rem;
+	font-size: 1rem;
+	border: none;
+	border-radius: 5px;
+	background-color: #eee;
+}
+
+button {
+	width: 100%;
+	padding: 0.7rem 1.2rem;
+	font-size: 1rem;
+	border: none;
+	border-radius: 5px;
+	background-color: #28a745;
+	color: #fff;
+	cursor: pointer;
+	opacity: 0.7;
+	transition:  0.3s ease;
+}
+
+button:hover {
+	opacity: 1;
+	background-color: #218838;
+}
+
+button:active {
+	transform: scale(0.98);
+	background-color: #0d5d20;
+}
+
+.output-group {
+	margin-top: 1.2rem;
+}
+
+#message {
+	margin-top: 0.7rem;
+	text-align: center;
+	font-size: 0.8rem;
+	color: #28a745;
+}
