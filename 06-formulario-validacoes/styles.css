@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex; /* alinhamento em coluna */
+  flex-direction: column; /* alinhamento em coluna */
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+input[type="text"], input[type="email"], textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* ======== TEXTAREA COM CONTADOR INTERNO ======== */
+textarea {
+	resize: vertical; /* só permite redimensionar verticalmente */
+	max-width: 100%; /* largura máxima de 100% do contêiner pai */
+}
+
+.textarea-container {
+  position: relative;
+}
+
+.textarea-wrapper {
+  position: relative;
+  display: flex;
+}
+
+.textarea-wrapper textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  padding: 10px 40px 25px 10px; /* espaço extra para o contador */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* contador em cima do textarea */
+/* .char-counter {
+  align-self: flex-end;
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+} */
+
+/* contador dentro do textarea */
+.textarea-wrapper .char-counter {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-size: 12px;
+  color: #666;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2px 5px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.textarea-wrapper .char-counter.limit-reached {
+  color: red;
+  font-weight: bold;
+}
+
+.warning {
+  display: none;
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+  text-align: right;
+  animation: fadeIn 0.3s ease-in-out; /* adicionar animação de fade-in */
+}
+
+/* animação suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-message {
+  color: #e21111;
+  margin-top: 5px;
+}
+
+button[type="submit"] {
+  background-color: #2756af;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button[type="submit"]:hover {
+  background-color: #132f63;
+}
+
+/* Estilo para inputs com erro */
+.form-control.error input,
+.form-control.error textarea {
+  border-color: #e21111;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/06-formulario-validacoes/styles.css">
+	<!-- defer para garantir que o HTML seja carregado antes do JS -->
+	<script src="/06-formulario-validacoes/scripts.js" defer></script>
+	<title>Barra de Progresso</title>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Formulário de Contato</h1>
+		<form>
+			<div class="form-control">
+				<label for="nome">Nome</label>
+				<input type="text" id="nome" name="nome" />
+				<div class="error-message"></div>
+			</div>
+
+			<div class="form-control">
+				<label for="email">E-mail</label>
+				<input type="email" id="email" name="email" />
+				<div class="error-message"></div>
+			</div>
+
+			<div class="form-control">
+				<label for="assunto">Assunto</label>
+				<input type="text" id="assunto" name="assunto" />
+				<div class="error-message"></div>
+			</div>
+
+			<div class="form-control textarea-container">
+				<label for="mensagem">Mensagem</label>
+				<!-- <textarea id="mensagem" name="mensagem" maxlength="200"></textarea> -->
+				<!-- <div class="char-counter" id="charCounter">0/200</div> -->
+				<div class="textarea-wrapper">
+					<textarea id="mensagem" name="mensagem" maxlength="200"></textarea>
+					<span class="char-counter" id="charCounter">0/200</span>
+				</div>
+				<div class="warning" id="warningMessage">Limite máximo atingido!</div>
+				<div class="error-message"></div>
+			</div>
+
+			<button type="submit">Enviar</button>
+		</form>
+	</div>
+</body>
+</html>
